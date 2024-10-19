@@ -24,19 +24,66 @@
             </div>
         </div>
     </section>
+    
+    {{! First section}}
     <section class="p-outer">
         <div class="p-inner">
-            <h2>Latest Articles</h2>
+            <h2>Venus flytraps</h2>
             <div class="p-posts-grid">
-                {{! Use the foreach helper to loop through available posts }}
-                {{#foreach posts}}
-                <article class="p-post-card">
-                    {{! Use the img_url helper to bring in the post's feature image. }}
-                    <img src="{{img_url feature_image size="m"}}" alt="{{feature_image_alt}}" />
-                    <h3><a href="{{url}}">{{title}}</a></h3>
-                </article>
-                {{/foreach}}
+                {{! Use the get helper to fetch posts }}
+                {{#get "posts" filter="primary_tag:venus-flytrap" limit="6" }}
+                    {{! Use the foreach helper to loop through available posts }}
+                    {{#foreach posts}}
+                        <article class="p-post-card">
+                            {{! Use the img_url helper to bring in the post's feature image. }}
+                            <img src="{{img_url feature_image size="m"}}" alt="{{feature_image_alt}}" />
+                            <h3><a href="{{url}}">{{title}}</a></h3>
+                        </article>
+                    {{/foreach}}
+                {{/get}}
             </div>
         </div>
     </section>
+
+    {{! Second section }}
+    <section class="p-outer">
+        <div class="p-inner">
+            <h2>Sundews</h2>
+            <div class="p-posts-grid">
+                {{! Use the get helper to fetch posts }}
+                {{#get "posts" filter="primary_tag:sundew" limit="6" }}
+                    {{! Use the foreach helper to loop through available posts }}
+                    {{#foreach posts}}
+                        <article class="p-post-card">
+                            {{! Use the img_url helper to bring in the post's feature image. }}
+                            <img src="{{img_url feature_image size="m"}}" alt="{{feature_image_alt}}" />
+                            <h3><a href="{{url}}">{{title}}</a></h3>
+                        </article>
+                    {{/foreach}}
+                {{/get}}
+            </div>
+        </div>
+    </section>
+
+
+    {{! Third section }}
+    <section class="p-outer">
+        <div class="p-inner">
+            <h2>Pitcher plants</h2>
+            <div class="p-posts-grid">
+                {{! Use the get helper to fetch posts }}
+                {{#get "posts" filter="primary_tag:pitcher-plant" limit="6" }}
+                    {{! Use the foreach helper to loop through available posts }}
+                    {{#foreach posts}}
+                        <article class="p-post-card">
+                            {{! Use the img_url helper to bring in the post's feature image. }}
+                            <img src="{{img_url feature_image size="m"}}" alt="{{feature_image_alt}}" />
+                            <h3><a href="{{url}}">{{title}}</a></h3>
+                        </article>
+                    {{/foreach}}
+                {{/get}}
+            </div>
+        </div>
+    </section>
+
 </main>
